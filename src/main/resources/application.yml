@@ -1,0 +1,20 @@
+spring:
+  main:
+    web-application-type: servlet
+  ai:
+    mcp:
+      client:
+        toolcallback:
+          enabled: true #该配置会自动配置ToolCallbackProvider
+        type: SYNC
+        sse:
+          connections:
+            mcpserver:
+              url: http://localhost:8082
+    openai:
+      api-key: ${api-key}
+      base-url: https://api.deepseek.com
+      chat:
+        enabled: true
+        options:
+          model: deepseek-chat
